@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="280" viewBox="0 0 500 280" role="img" aria-label="RP Flujo, Rubén Prieto"><g transform="translate(35 32)"><g transform="scale(1)" fill="#174B46">
+<rect x="0" y="0" width="35" height="204" rx="8"/>
+<rect x="46" y="0" width="68" height="35" rx="8"/>
+<path d="M125 0h17c32 0 53 20 53 51v5c0 31-21 51-53 51h-17V72h16c13 0 19-6 19-18s-6-19-19-19h-16z"/>
+<rect x="46" y="72" width="68" height="35" rx="8"/>
+<path d="M72 118h47l88 86h-50z"/>
+<rect x="230" y="0" width="35" height="204" rx="8"/>
+<rect x="276" y="0" width="64" height="35" rx="8"/>
+<path d="M352 0h13c39 0 61 22 61 55s-22 55-61 55h-13V75h14c17 0 25-7 25-20s-8-20-25-20h-14z"/>
+<rect x="276" y="75" width="64" height="35" rx="8"/>
+</g><rect x="202" y="148" width="32" height="12" rx="6" fill="#A5D95F"/><circle cx="426" cy="204" r="10" fill="#A5D95F"/></g></svg>
