@@ -1,51 +1,647 @@
 <!doctype html>
-<html lang="es"><head>
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Planeá tu visita al Balneario La Joya. Consultá actividades, clases, restaurante y disponibilidad.">
-    <title>La Joya · Reservas y agua</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c4948'/%3E%3Ctext x='32' y='43' text-anchor='middle' fill='%23d8ef87' font-size='38' font-family='serif'%3EJ%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet" href="estilos.css?v=8"><link rel="stylesheet" href="logo.css?v=1"></head>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+            name="description"
+            content="Planeá tu visita al Balneario La Joya. Consultá actividades, clases, restaurante y disponibilidad."
+        />
+        <title>La Joya · Reservas y agua</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c4948'/%3E%3Ctext x='32' y='43' text-anchor='middle' fill='%23d8ef87' font-size='38' font-family='serif'%3EJ%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="stylesheet" href="estilos.css?v=8" />
+        <link rel="stylesheet" href="logo.css?v=1" />
+    </head>
     <body>
+        <header class="wrap">
+            <nav class="nav" aria-label="Principal">
+                <a class="lj-logo lj-compact" href="#inicio" aria-label="La Joya, agua, naturaleza y tiempo para vos">
+                    <span class="lj-sun" aria-hidden="true"></span>
+                    <span class="lj-overline">Un respiro en</span>
+                    <span class="lj-name" aria-hidden="true">
+                        <span style="--i: 0">L</span>
+                        <span class="lj-coral" style="--i: 1">a</span>
+                        <span class="lj-space"></span>
+                        <span class="lj-yellow" style="--i: 2">J</span>
+                        <span class="lj-blue" style="--i: 3">o</span>
+                        <span class="lj-green" style="--i: 4">y</span>
+                        <span style="--i: 5">a</span>
+                    </span>
+                    <svg class="lj-water" viewBox="0 0 530 65" aria-hidden="true">
+                        <path
+                            class="lj-wave1"
+                            d="M8 28 Q41 8 74 28 T140 28 T206 28 T272 28 T338 28 T404 28 T470 28 Q498 29 522 18"
+                        />
+                        <path
+                            class="lj-wave2"
+                            d="M30 43 Q63 23 96 43 T162 43 T228 43 T294 43 T360 43 T426 43 T492 43"
+                        />
+                        <path class="lj-leaf" d="M250 13 C233 1 226 3 221 6 C225 20 237 24 250 13Z" />
+                        <path class="lj-leaf" d="M252 14 C260 -2 272 -2 277 0 C276 14 266 20 252 14Z" />
+                        <circle class="lj-droplet" cx="77" cy="12" r="4" />
+                        <circle class="lj-droplet" cx="400" cy="8" r="3" />
+                    </svg>
+                    <span class="lj-subtitle">
+                        <b>AGUA</b>
+                        · NATURALEZA · TIEMPO PARA VOS
+                    </span>
+                </a>
+                <button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="navigation">
+                    Menu ☰
+                </button>
+                <div class="links" id="navigation">
+                    <a href="#experiencias">Experiencias</a>
+                    <a href="#clases">Clases</a>
+                    <a href="#restaurante">Alimentación</a>
+                    <a href="#horarios">Horarios</a>
+                    <a class="btn" href="#reservar">Planeá tu visita ↗</a>
+                </div>
+            </nav>
+        </header>
+        <main id="inicio" class="wrap">
+            <div class="hero">
+                <div class="hero-photo" role="img" aria-label="Jardín, piscinas y rótulo del Balneario La Joya"></div>
+                <div class="hero-content">
+                    <div class="eyebrow">AGUA · NATURALEZA · BUENOS MOMENTOS</div>
+                    <h1 class="logo-heading">
+                        <span
+                            class="lj-logo lj-hero"
+                            role="img"
+                            aria-label="La Joya, agua, naturaleza y tiempo para vos"
+                        >
+                            <span class="lj-sun" aria-hidden="true"></span>
+                            <span class="lj-overline">Un respiro en</span>
+                            <span class="lj-name" aria-hidden="true">
+                                <span style="--i: 0">L</span>
+                                <span class="lj-coral" style="--i: 1">a</span>
+                                <span class="lj-space"></span>
+                                <span class="lj-yellow" style="--i: 2">J</span>
+                                <span class="lj-blue" style="--i: 3">o</span>
+                                <span class="lj-green" style="--i: 4">y</span>
+                                <span style="--i: 5">a</span>
+                            </span>
+                            <svg class="lj-water" viewBox="0 0 530 65" aria-hidden="true">
+                                <path
+                                    class="lj-wave1"
+                                    d="M8 28 Q41 8 74 28 T140 28 T206 28 T272 28 T338 28 T404 28 T470 28 Q498 29 522 18"
+                                />
+                                <path
+                                    class="lj-wave2"
+                                    d="M30 43 Q63 23 96 43 T162 43 T228 43 T294 43 T360 43 T426 43 T492 43"
+                                />
+                                <path class="lj-leaf" d="M250 13 C233 1 226 3 221 6 C225 20 237 24 250 13Z" />
+                                <path class="lj-leaf" d="M252 14 C260 -2 272 -2 277 0 C276 14 266 20 252 14Z" />
+                                <circle class="lj-droplet" cx="77" cy="12" r="4" />
+                                <circle class="lj-droplet" cx="400" cy="8" r="3" />
+                            </svg>
+                            <span class="lj-subtitle">
+                                <b>AGUA</b>
+                                · NATURALEZA · TIEMPO PARA VOS
+                            </span>
+                        </span>
+                    </h1>
+                    <p>Tu próximo buen recuerdo empieza aquí.</p>
+                    <div class="actions">
+                        <a class="btn light" href="#reservar">Planeá tu visita</a>
+                        <a class="hero-link" href="#experiencias">Descubrí el balneario ↓</a>
+                    </div>
+                </div>
+                <span class="hero-caption">UJARRÁS / PARAÍSO DE CARTAGO</span>
+            </div>
+            <div class="ribbon">
+                <span>
+                    <b>01</b>
+                    Elegí tu plan
+                </span>
+                <span>
+                    <b>02</b>
+                    Consultá disponibilidad
+                </span>
+                <span>
+                    <b>03</b>
+                    Coordiná por WhatsApp
+                </span>
+            </div>
+            <section id="horarios">
+                <div class="split">
+                    <div>
+                        <div class="eyebrow">Todo para tu visita</div>
+                        <h2>
+                            Un día en familia.
+                            <br />
+                            <em>Todo más cerca.</em>
+                        </h2>
+                        <p class="muted">
+                            Estamos en Ujarrás, Paraíso de Cartago. Disfrutá un ambiente familiar, con amplio parqueo de
+                            cortesía.
+                        </p>
+                        <a
+                            class="textlink"
+                            href="https://share.google/qrat92dCz13i1KOK0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Cómo llegar ↗
+                        </a>
+                    </div>
+                    <div class="panel">
+                        <div class="row">
+                            <strong>Horario del balneario</strong>
+                            <span>7:00 a. m. a 3:45 p. m.</span>
+                        </div>
+                        <div class="row">
+                            <strong>Entrada por persona</strong>
+                            <span>₡4.000</span>
+                        </div>
+                        <div class="row">
+                            <strong>Área para mascotas</strong>
+                            <span>₡2.000</span>
+                        </div>
+                        <div class="row">
+                            <strong>Parqueo</strong>
+                            <span>De cortesía</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="amenities">
+                    <article>
+                        <h3>Cuatro piscinas</h3>
+                        <p>Piscinas, ranchos, parrillas, zonas verdes y cancha para disfrutar tu visita.</p>
+                    </article>
+                    <article>
+                        <h3>Tu mascota también</h3>
+                        <p>
+                            Somos pet friendly. Contamos con una piscina exclusiva y área de juegos para mascotas.
+                            Tarifa: ₡2.000.
+                        </p>
+                    </article>
+                    <article>
+                        <h3>Comodidad para todos</h3>
+                        <p>Instalaciones accesibles. Según la administración, el balneario cumple con la Ley 7600.</p>
+                    </article>
+                    <article>
+                        <h3>Traé tus alimentos</h3>
+                        <p>
+                            Se permite ingresar alimentos y bebidas. Consultá las condiciones de ingreso con el
+                            balneario.
+                        </p>
+                    </article>
+                    <article>
+                        <h3>Electricidad y microondas</h3>
+                        <p>Área común con electricidad y microondas para calentar tus alimentos.</p>
+                    </article>
+                    <article>
+                        <h3>Agua potable</h3>
+                        <p>Acceso a agua potable en varios puntos del balneario.</p>
+                    </article>
+                </div>
+            </section>
+            <section id="experiencias">
+                <div class="welcome">
+                    <div class="eyebrow">BIENVENIDOS A LA JOYA</div>
+                    <h2>
+                        Hay días que se disfrutan
+                        <br />
+                        <em>sin mirar el reloj.</em>
+                    </h2>
+                    <p>
+                        El agua, el aire libre y la compañía que elegís.
+                        <br />
+                        Encontrá tu forma de pasar el día en La Joya.
+                    </p>
+                </div>
+                <div class="intro-grid">
+                    <div class="photo-frame pool" role="img" aria-label="Piscinas al aire libre rodeadas de vegetación">
+                        <span>PISCINAS & NATURALEZA</span>
+                    </div>
+                    <div class="intro-text">
+                        <div class="eyebrow">UN LUGAR PARA COMPARTIR</div>
+                        <h2>
+                            Tu pausa.
+                            <br />
+                            Tu ritmo.
+                            <br />
+                            <em>Tu lugar.</em>
+                        </h2>
+                        <p>
+                            Un espacio de ambiente familiar con cuatro piscinas, ranchos, parrillas, zonas verdes y
+                            cancha. Hacé espacio para un buen día.
+                        </p>
+                        <a class="textlink" href="#reservar" data-plan="Visita al balneario">
+                            Quiero visitar La Joya ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">VIVÍ LA EXPERIENCIA</div>
+                        <h2>
+                            Un día. Muchas formas
+                            <br />
+                            de disfrutarlo.
+                        </h2>
+                    </div>
+                    <p>Consultá las opciones disponibles para la fecha de tu visita.</p>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <span class="number">01 /</span>
+                        <h3>Un día de balneario</h3>
+                        <p>
+                            Entrada de ₡4.000 por persona. Disfrutá las piscinas y las zonas verdes en familia, de 7:00
+                            a. m. a 3:45 p. m.
+                        </p>
+                        <a class="textlink" href="#reservar" data-plan="Visita al balneario">Planear mi visita ↗</a>
+                    </article>
+                    <article class="card">
+                        <span class="number">02 /</span>
+                        <h3>Tiempo para aprender</h3>
+                        <p>
+                            Clases de natación para niños y adultos. Elegí una sesión o un paquete mensual, con o sin
+                            profesor.
+                        </p>
+                        <a class="textlink" href="#clases">Consultar las clases ↗</a>
+                    </article>
+                    <article class="card">
+                        <span class="number">03 /</span>
+                        <h3>Una mesa para compartir</h3>
+                        <p>Contamos con servicio de alimentación dentro del balneario para que disfrutés tu día.</p>
+                        <a class="textlink" href="#restaurante">Ver servicio de alimentación ↗</a>
+                    </article>
+                </div>
+            </section>
+            <section id="clases">
+                <div class="split">
+                    <div class="photo-frame lanes" role="img" aria-label="Piscina con carriles del Balneario La Joya">
+                        <span>NATACIÓN PARA NIÑOS Y ADULTOS</span>
+                    </div>
+                    <div class="class-copy">
+                        <div class="eyebrow class-label">Clases de natación</div>
+                        <p class="class-emphasis">Aprende y entrena</p>
+                        <h2>
+                            Encontrá tu ritmo.
+                            <br />
+                            <em>Dentro del agua.</em>
+                        </h2>
+                        <p class="muted">
+                            Clases de natación para niños y adultos, con paquetes mensuales y sesiones individuales.
+                        </p>
+                        <div class="panel">
+                            <div class="row">
+                                <strong>
+                                    Todos los días
+                                    <br />
+                                    <small>Excepto sábados</small>
+                                </strong>
+                                <span>
+                                    6:00 a. m. a 9:00 a. m.
+                                    <br />
+                                    4:00 p. m. a 7:00 p. m.
+                                </span>
+                            </div>
+                            <div class="row">
+                                <strong>Sábados</strong>
+                                <span>6:00 a. m. a 10:00 a. m.</span>
+                            </div>
+                            <p class="small muted">
+                                Consultá el grupo y el cupo antes de asistir. El horario de natación es distinto del
+                                horario de visita al balneario.
+                            </p>
+                        </div>
+                        <a class="btn" href="#reservar" data-plan="Información de clases">Consultar cupo ↗</a>
+                    </div>
+                </div>
+                <div class="pricing-grid">
+                    <div class="price-panel">
+                        <div class="eyebrow">APRENDÉ CON ACOMPAÑAMIENTO</div>
+                        <h3>Con profesor</h3>
+                        <table>
+                            <caption>Paquetes mensuales de natación con profesor</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Frecuencia</th>
+                                    <th scope="col">Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">4 veces al mes</th>
+                                    <td>₡16.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8 veces al mes</th>
+                                    <td>₡30.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">12 veces al mes</th>
+                                    <td>₡40.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1 clase</th>
+                                    <td>₡5.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a class="textlink" href="#reservar" data-plan="Natación con profesor">
+                            Consultar este plan ↗
+                        </a>
+                    </div>
+                    <div class="price-panel">
+                        <div class="eyebrow">SESIONES SIN PROFESOR</div>
+                        <h3>A tu ritmo</h3>
+                        <table>
+                            <caption>Paquetes mensuales de natación sin profesor</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Frecuencia</th>
+                                    <th scope="col">Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">4 veces al mes</th>
+                                    <td>₡12.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8 veces al mes</th>
+                                    <td>₡16.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">12 veces al mes</th>
+                                    <td>₡20.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">16 veces al mes</th>
+                                    <td>₡30.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1 sesión</th>
+                                    <td>₡4.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a class="textlink" href="#reservar" data-plan="Natación sin profesor">
+                            Consultar este plan ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="team-banner">
+                    <div>
+                        <div class="eyebrow">ENTRENÁ CON TU EQUIPO</div>
+                        <h3>Triatlón, duatlón, ciclismo y running.</h3>
+                        <p>Reservá para tu equipo y coordiná el uso de nuestras instalaciones.</p>
+                    </div>
+                    <a class="btn" href="#reservar" data-plan="Reserva para equipo deportivo">
+                        Consultar para mi equipo ↗
+                    </a>
+                </div>
+            </section>
+            <section id="restaurante">
+                <div class="restaurant food-service">
+                    <div>
+                        <div class="eyebrow">SERVICIO DE ALIMENTACIÓN</div>
+                        <h2>
+                            Una pausa para comer.
+                            <br />
+                            <em>Y seguir disfrutando.</em>
+                        </h2>
+                    </div>
+                    <div>
+                        <h3>Comida dentro del balneario</h3>
+                        <p class="muted">Contamos con un lugar donde podés comprar comida durante tu visita.</p>
+                        <p class="muted">
+                            También podés traer tus alimentos. Hay un área común con electricidad y microondas para
+                            calentarlos.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-<header class="wrap">
-    <nav class="nav" aria-label="Principal">
-        <a class="lj-logo lj-compact" href="#inicio" aria-label="La Joya, agua, naturaleza y tiempo para vos">
-            <span class="lj-sun" aria-hidden="true"></span>
-            <span class="lj-overline">Un respiro en</span>
-            <span class="lj-name" aria-hidden="true">
-            <span style="--i:0">L</span>
-            <span class="lj-coral" style="--i:1">a</span>
-            <span class="lj-space"></span><span class="lj-yellow" style="--i:2">J</span>
-            <span class="lj-blue" style="--i:3">o</span><span class="lj-green" style="--i:4">y</span>
-            <span style="--i:5">a</span></span>
-            <svg class="lj-water" viewBox="0 0 530 65" aria-hidden="true">
-                <path class="lj-wave1" d="M8 28 Q41 8 74 28 T140 28 T206 28 T272 28 T338 28 T404 28 T470 28 Q498 29 522 18"/>
-                <path class="lj-wave2" d="M30 43 Q63 23 96 43 T162 43 T228 43 T294 43 T360 43 T426 43 T492 43"/>
-                <path class="lj-leaf" d="M250 13 C233 1 226 3 221 6 C225 20 237 24 250 13Z"/>
-                <path class="lj-leaf" d="M252 14 C260 -2 272 -2 277 0 C276 14 266 20 252 14Z"/>
-                <circle class="lj-droplet" cx="77" cy="12" r="4"/>
-                <circle class="lj-droplet" cx="400" cy="8" r="3"/></svg>
-                <span class="lj-subtitle"><b>AGUA</b> · NATURALEZA · TIEMPO PARA VOS</span>
-        </a><button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu ☰</button>
-        <div class="links" id="navigation"><a href="#experiencias">Experiencias</a><a href="#clases">Clases</a><a href="#restaurante">Alimentación</a>
-            <a href="#horarios">Horarios</a><a class="btn" href="#reservar">Planeá tu visita ↗</a></div></nav></header>
-<main id="inicio" class="wrap">
-    <div class="hero">
-        <div class="hero-photo" role="img" aria-label="Jardín, piscinas y rótulo del Balneario La Joya"></div>
-        <div class="hero-content">
-            <div class="eyebrow">AGUA · NATURALEZA · BUENOS MOMENTOS</div>
-            <h1 class="logo-heading"><span class="lj-logo lj-hero" role="img" aria-label="La Joya, agua, naturaleza y tiempo para vos">
-                <span class="lj-sun" aria-hidden="true"></span><span class="lj-overline">Un respiro en</span>
-                <span class="lj-name" aria-hidden="true"><span style="--i:0">L</span>
-                <span class="lj-coral" style="--i:1">a</span><span class="lj-space"></span>
-                <span class="lj-yellow" style="--i:2">J</span><span class="lj-blue" style="--i:3">o</span>
-                <span class="lj-green" style="--i:4">y</span><span style="--i:5">a</span></span><svg class="lj-water" viewBox="0 0 530 65" aria-hidden="true"><path class="lj-wave1" d="M8 28 Q41 8 74 28 T140 28 T206 28 T272 28 T338 28 T404 28 T470 28 Q498 29 522 18"/><path class="lj-wave2" d="M30 43 Q63 23 96 43 T162 43 T228 43 T294 43 T360 43 T426 43 T492 43"/><path class="lj-leaf" d="M250 13 C233 1 226 3 221 6 C225 20 237 24 250 13Z"/><path class="lj-leaf" d="M252 14 C260 -2 272 -2 277 0 C276 14 266 20 252 14Z"/><circle class="lj-droplet" cx="77" cy="12" r="4"/><circle class="lj-droplet" cx="400" cy="8" r="3"/></svg><span class="lj-subtitle"><b>AGUA</b> · NATURALEZA · TIEMPO PARA VOS</span></span></h1><p>Tu próximo buen recuerdo empieza aquí.</p><div class="actions"><a class="btn light" href="#reservar">Planeá tu visita</a><a class="hero-link" href="#experiencias">Descubrí el balneario ↓</a></div></div><span class="hero-caption">UJARRÁS / PARAÍSO DE CARTAGO</span></div><div class="ribbon"><span><b>01</b> Elegí tu plan</span><span><b>02</b> Consultá disponibilidad</span><span><b>03</b> Coordiná por WhatsApp</span></div>
-<section id="horarios"><div class="split"><div><div class="eyebrow">Todo para tu visita</div><h2>Un día en familia.<br><em>Todo más cerca.</em></h2><p class="muted">Estamos en Ujarrás, Paraíso de Cartago. Disfrutá un ambiente familiar, con amplio parqueo de cortesía.</p><a class="textlink" href="https://share.google/qrat92dCz13i1KOK0" target="_blank" rel="noopener noreferrer">Cómo llegar ↗</a></div><div class="panel"><div class="row"><strong>Horario del balneario</strong><span>7:00 a. m. a 3:45 p. m.</span></div><div class="row"><strong>Entrada por persona</strong><span>₡4.000</span></div><div class="row"><strong>Área para mascotas</strong><span>₡2.000</span></div><div class="row"><strong>Parqueo</strong><span>De cortesía</span></div></div></div><div class="amenities"><article><h3>Cuatro piscinas</h3><p>Piscinas, ranchos, parrillas, zonas verdes y cancha para disfrutar tu visita.</p></article><article><h3>Tu mascota también</h3><p>Somos pet friendly. Contamos con una piscina exclusiva y área de juegos para mascotas. Tarifa: ₡2.000.</p></article><article><h3>Comodidad para todos</h3><p>Instalaciones accesibles. Según la administración, el balneario cumple con la Ley 7600.</p></article><article><h3>Traé tus alimentos</h3><p>Se permite ingresar alimentos y bebidas. Consultá las condiciones de ingreso con el balneario.</p></article><article><h3>Electricidad y microondas</h3><p>Área común con electricidad y microondas para calentar tus alimentos.</p></article><article><h3>Agua potable</h3><p>Acceso a agua potable en varios puntos del balneario.</p></article></div></section>
-<section id="experiencias"><div class="welcome"><div class="eyebrow">BIENVENIDOS A LA JOYA</div><h2>Hay días que se disfrutan<br><em>sin mirar el reloj.</em></h2><p>El agua, el aire libre y la compañía que elegís.<br>Encontrá tu forma de pasar el día en La Joya.</p></div><div class="intro-grid"><div class="photo-frame pool" role="img" aria-label="Piscinas al aire libre rodeadas de vegetación"><span>PISCINAS & NATURALEZA</span></div><div class="intro-text"><div class="eyebrow">UN LUGAR PARA COMPARTIR</div><h2>Tu pausa.<br>Tu ritmo.<br><em>Tu lugar.</em></h2><p>Un espacio de ambiente familiar con cuatro piscinas, ranchos, parrillas, zonas verdes y cancha. Hacé espacio para un buen día.</p><a class="textlink" href="#reservar" data-plan="Visita al balneario">Quiero visitar La Joya ↗</a></div></div><div class="section-head"><div><div class="eyebrow">VIVÍ LA EXPERIENCIA</div><h2>Un día. Muchas formas<br>de disfrutarlo.</h2></div><p>Consultá las opciones disponibles para la fecha de tu visita.</p></div><div class="cards"><article class="card"><span class="number">01 /</span><h3>Un día de balneario</h3><p>Entrada de ₡4.000 por persona. Disfrutá las piscinas y las zonas verdes en familia, de 7:00 a. m. a 3:45 p. m.</p><a class="textlink" href="#reservar" data-plan="Visita al balneario">Planear mi visita ↗</a></article><article class="card"><span class="number">02 /</span><h3>Tiempo para aprender</h3><p>Clases de natación para niños y adultos. Elegí una sesión o un paquete mensual, con o sin profesor.</p><a class="textlink" href="#clases">Consultar las clases ↗</a></article><article class="card"><span class="number">03 /</span><h3>Una mesa para compartir</h3><p>Contamos con servicio de alimentación dentro del balneario para que disfrutés tu día.</p><a class="textlink" href="#restaurante">Ver servicio de alimentación ↗</a></article></div></section>
-<section id="clases"><div class="split"><div class="photo-frame lanes" role="img" aria-label="Piscina con carriles del Balneario La Joya"><span>NATACIÓN PARA NIÑOS Y ADULTOS</span></div><div class="class-copy"><div class="eyebrow class-label">Clases de natación</div><p class="class-emphasis">Aprende y entrena</p><h2>Encontrá tu ritmo.<br><em>Dentro del agua.</em></h2><p class="muted">Clases de natación para niños y adultos, con paquetes mensuales y sesiones individuales.</p><div class="panel"><div class="row"><strong>Todos los días<br><small>Excepto sábados</small></strong><span>6:00 a. m. a 9:00 a. m.<br>4:00 p. m. a 7:00 p. m.</span></div><div class="row"><strong>Sábados</strong><span>6:00 a. m. a 10:00 a. m.</span></div><p class="small muted">Consultá el grupo y el cupo antes de asistir. El horario de natación es distinto del horario de visita al balneario.</p></div><a class="btn" href="#reservar" data-plan="Información de clases">Consultar cupo ↗</a></div></div><div class="pricing-grid"><div class="price-panel"><div class="eyebrow">APRENDÉ CON ACOMPAÑAMIENTO</div><h3>Con profesor</h3><table><caption>Paquetes mensuales de natación con profesor</caption><thead><tr><th scope="col">Frecuencia</th><th scope="col">Precio</th></tr></thead><tbody><tr><th scope="row">4 veces al mes</th><td>₡16.000</td></tr><tr><th scope="row">8 veces al mes</th><td>₡30.000</td></tr><tr><th scope="row">12 veces al mes</th><td>₡40.000</td></tr><tr><th scope="row">1 clase</th><td>₡5.000</td></tr></tbody></table><a class="textlink" href="#reservar" data-plan="Natación con profesor">Consultar este plan ↗</a></div><div class="price-panel"><div class="eyebrow">SESIONES SIN PROFESOR</div><h3>A tu ritmo</h3><table><caption>Paquetes mensuales de natación sin profesor</caption><thead><tr><th scope="col">Frecuencia</th><th scope="col">Precio</th></tr></thead><tbody><tr><th scope="row">4 veces al mes</th><td>₡12.000</td></tr><tr><th scope="row">8 veces al mes</th><td>₡16.000</td></tr><tr><th scope="row">12 veces al mes</th><td>₡20.000</td></tr><tr><th scope="row">16 veces al mes</th><td>₡30.000</td></tr><tr><th scope="row">1 sesión</th><td>₡4.000</td></tr></tbody></table><a class="textlink" href="#reservar" data-plan="Natación sin profesor">Consultar este plan ↗</a></div></div><div class="team-banner"><div><div class="eyebrow">ENTRENÁ CON TU EQUIPO</div><h3>Triatlón, duatlón, ciclismo y running.</h3><p>Reservá para tu equipo y coordiná el uso de nuestras instalaciones.</p></div><a class="btn" href="#reservar" data-plan="Reserva para equipo deportivo">Consultar para mi equipo ↗</a></div></section>
-<section id="restaurante"><div class="restaurant food-service"><div><div class="eyebrow">SERVICIO DE ALIMENTACIÓN</div><h2>Una pausa para comer.<br><em>Y seguir disfrutando.</em></h2></div><div><h3>Comida dentro del balneario</h3><p class="muted">Contamos con un lugar donde podés comprar comida durante tu visita.</p><p class="muted">También podés traer tus alimentos. Hay un área común con electricidad y microondas para calentarlos.</p></div></div></section>
-
-<section id="reservar"><div class="booking"><div><div class="eyebrow">Nos vemos en La Joya</div><h2>Hacé una pausa.<br><em>Te esperamos<br>en La Joya.</em></h2><p class="muted">Contanos qué tenés en mente y prepará tu solicitud.</p><ol class="steps"><li>Elegí tu fecha y el tipo de visita.</li><li>Revisá el mensaje de tu solicitud.</li><li>El equipo confirma disponibilidad por WhatsApp.</li></ol><p class="small muted">La solicitud no garantiza una reserva. La confirmación la realiza el balneario.</p></div><form id="booking"><div class="fields"><label class="full">Tu nombre<input name="nombre" autocomplete="given-name" maxlength="80" placeholder="¿Cómo te llamás?" required></label><label>Fecha de visita<input type="date" name="fecha" id="fecha" required></label><label>Personas<input type="number" name="personas" min="1" max="500" value="2" required></label><label class="full">¿Qué te interesa?<select name="plan" id="plan"><option>Visita al balneario</option><option>Información de clases</option><option>Consulta del servicio de alimentación</option><option>Consulta para un grupo</option><option>Natación con profesor</option><option>Natación sin profesor</option><option>Reserva para equipo deportivo</option><option>Visita con mascota</option></select></label><label class="full">Paquete de natación (opcional)<select name="paquete"><option value="">Sin seleccionar / no aplica</option><option>4 veces al mes</option><option>8 veces al mes</option><option>12 veces al mes</option><option>16 veces al mes (sin profesor)</option><option>Una clase o sesión</option></select></label><label class="full">Algo más que debamos saber<textarea name="notas" maxlength="1000" placeholder="Horario preferido o preguntas. No incluyás datos sensibles."></textarea></label></div><button class="btn submit" id="submit" type="submit">Revisar mi solicitud ↗</button><p class="small muted" id="connection">Revisá tu solicitud y abrí WhatsApp para enviarla al +506 6365 6047.</p><p class="small muted">Usaremos estos datos para preparar tu consulta. Al continuar, se abrirá WhatsApp; vos decidís cuándo enviar el mensaje. No incluyás documentos, datos bancarios ni información médica.</p><div id="result" tabindex="-1" hidden><p class="small">Tu mensaje está listo. Todavía no se ha enviado.</p><div class="message small" id="message"></div><a class="btn submit whatsapp-action" id="whatsapp" aria-disabled="true" role="link" tabindex="-1">Abrir WhatsApp ↗</a><button class="btn outline submit" id="copy" type="button">Copiar mensaje</button><p class="small" id="status" role="status"></p></div></form></div></section>
-<section class="faq"><div class="eyebrow">Tu visita, sin dudas</div><h2>Antes de venir</h2><details><summary>¿La solicitud confirma mi reserva?</summary><p>No. El equipo del balneario debe confirmar la disponibilidad y las condiciones por WhatsApp.</p></details><details><summary>¿Cómo consulto las clases?</summary><p>Seleccioná “Información de clases” en el formulario e indicá tus horarios preferidos. Consultá los requisitos y cupos antes de asistir.</p></details><details><summary>¿Hay dónde comprar comida?</summary><p>Sí. Contamos con servicio de alimentación dentro del balneario. También se permite traer alimentos y usar el microondas del área común.</p></details><details><summary>¿Qué normas debo tener presentes?</summary><p>No se permite fumar en ninguna área ni ingresar sistemas de sonido grandes. Ayudanos a conservar un ambiente familiar y tranquilo.</p></details><details><summary>¿Puedo ir con mi mascota?</summary><p>Sí. Hay una piscina exclusiva y área de juegos para mascotas, con tarifa de ₡2.000. Consultá las condiciones antes de tu visita.</p></details><details><summary>¿Puedo reservar para mi equipo deportivo?</summary><p>Sí. Recibimos consultas de equipos de triatlón, duatlón, ciclismo y running. Elegí “Reserva para equipo deportivo” e indicá la disciplina, la fecha y la cantidad de personas.</p></details></section>
-<div class="location"><div><div class="eyebrow">Encontranos</div><h3>Ujarrás, Paraíso de Cartago.</h3></div><a class="btn outline" href="https://share.google/qrat92dCz13i1KOK0" target="_blank" rel="noopener noreferrer">Ver ubicación en Google ↗</a></div></main><footer class="wrap"><div class="footer"><a class="lj-logo lj-compact" href="#inicio" aria-label="La Joya, agua, naturaleza y tiempo para vos"><span class="lj-sun" aria-hidden="true"></span><span class="lj-overline">Un respiro en</span><span class="lj-name" aria-hidden="true"><span style="--i:0">L</span><span class="lj-coral" style="--i:1">a</span><span class="lj-space"></span><span class="lj-yellow" style="--i:2">J</span><span class="lj-blue" style="--i:3">o</span><span class="lj-green" style="--i:4">y</span><span style="--i:5">a</span></span><svg class="lj-water" viewBox="0 0 530 65" aria-hidden="true"><path class="lj-wave1" d="M8 28 Q41 8 74 28 T140 28 T206 28 T272 28 T338 28 T404 28 T470 28 Q498 29 522 18"/><path class="lj-wave2" d="M30 43 Q63 23 96 43 T162 43 T228 43 T294 43 T360 43 T426 43 T492 43"/><path class="lj-leaf" d="M250 13 C233 1 226 3 221 6 C225 20 237 24 250 13Z"/><path class="lj-leaf" d="M252 14 C260 -2 272 -2 277 0 C276 14 266 20 252 14Z"/><circle class="lj-droplet" cx="77" cy="12" r="4"/><circle class="lj-droplet" cx="400" cy="8" r="3"/></svg><span class="lj-subtitle"><b>AGUA</b> · NATURALEZA · TIEMPO PARA VOS</span></a><p class="small muted">Balneario La Joya · Ujarrás, Cartago</p><a class="textlink" href="#reservar">Planeá tu visita ↗</a></div><div class="creator-credit"><span>Diseño y desarrollo por <a href="https://rubenprietob.com/" target="_blank" rel="noopener noreferrer" aria-label="RP: diseño y desarrollo web. Abre en una nueva pestaña."><img class="rp-credit-logo" src="assets/rp-simbolo.svg" alt="RP — Rubén Prieto" width="80" height="42" loading="lazy"></a></span><a href="https://rubenprietob.com/" target="_blank" rel="noopener noreferrer">¿Querés una web para tu negocio? <span aria-hidden="true">↗</span></a></div></footer>
-<script src="interactions.js?v=diver-4" defer></script></body></html>
+            <section id="reservar">
+                <div class="booking">
+                    <div>
+                        <div class="eyebrow">Nos vemos en La Joya</div>
+                        <h2>
+                            Hacé una pausa.
+                            <br />
+                            <em>
+                                Te esperamos
+                                <br />
+                                en La Joya.
+                            </em>
+                        </h2>
+                        <p class="muted">Contanos qué tenés en mente y prepará tu solicitud.</p>
+                        <ol class="steps">
+                            <li>Elegí tu fecha y el tipo de visita.</li>
+                            <li>Revisá el mensaje de tu solicitud.</li>
+                            <li>El equipo confirma disponibilidad por WhatsApp.</li>
+                        </ol>
+                        <p class="small muted">
+                            La solicitud no garantiza una reserva. La confirmación la realiza el balneario.
+                        </p>
+                    </div>
+                    <form id="booking">
+                        <div class="fields">
+                            <label class="full">
+                                Tu nombre
+                                <input
+                                    name="nombre"
+                                    autocomplete="given-name"
+                                    maxlength="80"
+                                    placeholder="¿Cómo te llamás?"
+                                    required
+                                />
+                            </label>
+                            <label>
+                                Fecha de visita
+                                <input type="date" name="fecha" id="fecha" required />
+                            </label>
+                            <label>
+                                Personas
+                                <input type="number" name="personas" min="1" max="500" value="2" required />
+                            </label>
+                            <label class="full">
+                                ¿Qué te interesa?
+                                <select name="plan" id="plan">
+                                    <option>Visita al balneario</option>
+                                    <option>Información de clases</option>
+                                    <option>Consulta del servicio de alimentación</option>
+                                    <option>Consulta para un grupo</option>
+                                    <option>Natación con profesor</option>
+                                    <option>Natación sin profesor</option>
+                                    <option>Reserva para equipo deportivo</option>
+                                    <option>Visita con mascota</option>
+                                </select>
+                            </label>
+                            <label class="full">
+                                Paquete de natación (opcional)
+                                <select name="paquete">
+                                    <option value="">Sin seleccionar / no aplica</option>
+                                    <option>4 veces al mes</option>
+                                    <option>8 veces al mes</option>
+                                    <option>12 veces al mes</option>
+                                    <option>16 veces al mes (sin profesor)</option>
+                                    <option>Una clase o sesión</option>
+                                </select>
+                            </label>
+                            <label class="full">
+                                Algo más que debamos saber
+                                <textarea
+                                    name="notas"
+                                    maxlength="1000"
+                                    placeholder="Horario preferido o preguntas. No incluyás datos sensibles."
+                                ></textarea>
+                            </label>
+                        </div>
+                        <button class="btn submit" id="submit" type="submit">Revisar mi solicitud ↗</button>
+                        <p class="small muted" id="connection">
+                            Revisá tu solicitud y abrí WhatsApp para enviarla al +506 6365 6047.
+                        </p>
+                        <p class="small muted">
+                            Usaremos estos datos para preparar tu consulta. Al continuar, se abrirá WhatsApp; vos
+                            decidís cuándo enviar el mensaje. No incluyás documentos, datos bancarios ni información
+                            médica.
+                        </p>
+                        <div id="result" tabindex="-1" hidden>
+                            <p class="small">Tu mensaje está listo. Todavía no se ha enviado.</p>
+                            <div class="message small" id="message"></div>
+                            <a
+                                class="btn submit whatsapp-action"
+                                id="whatsapp"
+                                aria-disabled="true"
+                                role="link"
+                                tabindex="-1"
+                            >
+                                Abrir WhatsApp ↗
+                            </a>
+                            <button class="btn outline submit" id="copy" type="button">Copiar mensaje</button>
+                            <p class="small" id="status" role="status"></p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="faq">
+                <div class="eyebrow">Tu visita, sin dudas</div>
+                <h2>Antes de venir</h2>
+                <details>
+                    <summary>¿La solicitud confirma mi reserva?</summary>
+                    <p>No. El equipo del balneario debe confirmar la disponibilidad y las condiciones por WhatsApp.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo consulto las clases?</summary>
+                    <p>
+                        Seleccioná “Información de clases” en el formulario e indicá tus horarios preferidos. Consultá
+                        los requisitos y cupos antes de asistir.
+                    </p>
+                </details>
+                <details>
+                    <summary>¿Hay dónde comprar comida?</summary>
+                    <p>
+                        Sí. Contamos con servicio de alimentación dentro del balneario. También se permite traer
+                        alimentos y usar el microondas del área común.
+                    </p>
+                </details>
+                <details>
+                    <summary>¿Qué normas debo tener presentes?</summary>
+                    <p>
+                        No se permite fumar en ninguna área ni ingresar sistemas de sonido grandes. Ayudanos a conservar
+                        un ambiente familiar y tranquilo.
+                    </p>
+                </details>
+                <details>
+                    <summary>¿Puedo ir con mi mascota?</summary>
+                    <p>
+                        Sí. Hay una piscina exclusiva y área de juegos para mascotas, con tarifa de ₡2.000. Consultá las
+                        condiciones antes de tu visita.
+                    </p>
+                </details>
+                <details>
+                    <summary>¿Puedo reservar para mi equipo deportivo?</summary>
+                    <p>
+                        Sí. Recibimos consultas de equipos de triatlón, duatlón, ciclismo y running. Elegí “Reserva para
+                        equipo deportivo” e indicá la disciplina, la fecha y la cantidad de personas.
+                    </p>
+                </details>
+            </section>
+            <div class="location">
+                <div>
+                    <div class="eyebrow">Encontranos</div>
+                    <h3>Ujarrás, Paraíso de Cartago.</h3>
+                </div>
+                <a
+                    class="btn outline"
+                    href="https://share.google/qrat92dCz13i1KOK0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Ver ubicación en Google ↗
+                </a>
+            </div>
+        </main>
+        <footer class="wrap">
+            <div class="footer">
+                <a class="lj-logo lj-compact" href="#inicio" aria-label="La Joya, agua, naturaleza y tiempo para vos">
+                    <span class="lj-sun" aria-hidden="true"></span>
+                    <span class="lj-overline">Un respiro en</span>
+                    <span class="lj-name" aria-hidden="true">
+                        <span style="--i: 0">L</span>
+                        <span class="lj-coral" style="--i: 1">a</span>
+                        <span class="lj-space"></span>
+                        <span class="lj-yellow" style="--i: 2">J</span>
+                        <span class="lj-blue" style="--i: 3">o</span>
+                        <span class="lj-green" style="--i: 4">y</span>
+                        <span style="--i: 5">a</span>
+                    </span>
+                    <svg class="lj-water" viewBox="0 0 530 65" aria-hidden="true">
+                        <path
+                            class="lj-wave1"
+                            d="M8 28 Q41 8 74 28 T140 28 T206 28 T272 28 T338 28 T404 28 T470 28 Q498 29 522 18"
+                        />
+                        <path
+                            class="lj-wave2"
+                            d="M30 43 Q63 23 96 43 T162 43 T228 43 T294 43 T360 43 T426 43 T492 43"
+                        />
+                        <path class="lj-leaf" d="M250 13 C233 1 226 3 221 6 C225 20 237 24 250 13Z" />
+                        <path class="lj-leaf" d="M252 14 C260 -2 272 -2 277 0 C276 14 266 20 252 14Z" />
+                        <circle class="lj-droplet" cx="77" cy="12" r="4" />
+                        <circle class="lj-droplet" cx="400" cy="8" r="3" />
+                    </svg>
+                    <span class="lj-subtitle">
+                        <b>AGUA</b>
+                        · NATURALEZA · TIEMPO PARA VOS
+                    </span>
+                </a>
+                <p class="small muted">Balneario La Joya · Ujarrás, Cartago</p>
+                <a class="textlink" href="#reservar">Planeá tu visita ↗</a>
+            </div>
+            <div class="creator-credit">
+                <span>
+                    Diseño y desarrollo por
+                    <a
+                        href="https://rubenprietob.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="RP: diseño y desarrollo web. Abre en una nueva pestaña."
+                    >
+                        <img
+                            class="rp-credit-logo"
+                            src="assets/rp-simbolo.svg"
+                            alt="RP — Rubén Prieto"
+                            width="80"
+                            height="42"
+                            loading="lazy"
+                        />
+                    </a>
+                </span>
+                <a href="https://rubenprietob.com/" target="_blank" rel="noopener noreferrer">
+                    ¿Querés una web para tu negocio?
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </footer>
+        <script src="interactions.js?v=diver-4" defer></script>
+    </body>
+</html>
